@@ -22,14 +22,23 @@
     }
 
     .say-hi-button {
-      padding: 0.25em;
-      width: 8em;
+       padding: 0.25em;
+      border-radius: 4px;
+      border: none;
+      background: white;
+      color: black;
+      width: 4em;
+      height: 2em;
     }
+	  
+    .icon {
+	width:48px;
+	  }
   </style>
 
     <body style="margin: 0; overflow: hidden;">
             <div class="buttons">
-     		 <button class="say-hi-button"><img src="images/camera.png" alt=""></button>
+     		 <button class="say-hi-button"><img class="icon" src="images/camera.png" alt=""></button>
     	</div>
         <a-scene
             vr-mode-ui="enabled: false;"
