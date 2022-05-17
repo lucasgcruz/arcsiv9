@@ -45,7 +45,7 @@
 
     <body style="margin: 0; overflow: hidden;">
             <div class="buttons">
-     		 <button class="say-hi-button"><img class="icon" src="images/camera.png" alt=""></button>
+     		 <button class="say-hi-button" onclick="save()"><img class="icon" src="images/camera.png" alt=""></button>
     	</div>
         <a-scene
             vr-mode-ui="enabled: false;"
@@ -85,6 +85,13 @@
 
             <a-entity camera></a-entity>
         </a-scene>  
+
         
+        <script>
+            function save(){
+                document.querySelector('a-scene').components.screenshot.capture('perspective')
+            }
+        </script>
+
     </body>
 </html>
