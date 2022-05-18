@@ -6,6 +6,11 @@
         <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+        <script>
+            function foto(){
+                document.querySelector('a-scene').components.screenshot.capture('perspective')
+            }
+        </script>
     </head>
 	
   <style>
@@ -45,7 +50,7 @@
 
     <body style="margin: 0; overflow: hidden;">
             <div class="buttons">
-     		 <button class="say-hi-button" onclick="capture()"><img class="icon" src="images/camera.png"></button>
+     		 <button class="say-hi-button" onclick="foto()"><img class="icon" src="images/camera.png"></button>
     	</div>
         <a-scene
             vr-mode-ui="enabled: false;"
