@@ -32,9 +32,9 @@
 
             resizedContext.drawImage(origCanvas, 0, 0, width, height);
             return resizedCanvas.toDataURL();
-        }
+            }
 
-        document.getElementById("clique").addEventListener("click", function() {
+        function foto() {
             let aScene = document
                 .querySelector("a-scene")
                 .components.screenshot.getCanvas("perspective");
@@ -42,12 +42,12 @@
             aScene = resizeCanvas(aScene, frame.width, frame.height);
             frame = frame.dataUri;
             mergeImages([frame, aScene]).then(b64 => {
-                let link = document.getElementById("download-link", "png");
+                let link = document.createElement('a');
                 link.setAttribute("download", "AR.png");
                 link.setAttribute("href", b64);
                 link.click();
             });
-        });
+            }
 
         </script>
     </head>
@@ -89,7 +89,7 @@
 
     <body style="margin: 0; overflow: hidden;">
             <div class="buttons">
-     		 <button class="say-hi-button" id="clique"><img class="icon" src="images/camera.png"></button>
+     		 <button class="say-hi-button" id="clique" onclick="foto()"><img class="icon" src="images/camera.png"></button>
     	</div>
         <a-scene
             vr-mode-ui="enabled: false;"
