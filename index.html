@@ -8,7 +8,19 @@
         <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>
             function foto(){
-                document.querySelector('a-scene').components.screenshot.capture('perspective')
+                var canvas = document.querySelector('a-scene').components.screenshot.getCanvas('perspective');
+                var dataURL = canvas.toDataURL("image/jpeg", 1.0);
+
+                baixarfoto(dataURL, 'canvas.jpeg')
+
+            }
+
+            function baixarfoto(data, filename = 'untitled.jpeg'){
+                var a = document.createElement('a');
+            a.href = data;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
             }
         </script>
     </head>
